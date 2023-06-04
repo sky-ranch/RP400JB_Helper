@@ -29,6 +29,9 @@ echo 본 배치파일은 Limerainee 님의 Ridipaer Pro Kitchien r13.2
 echo 		https://github.com/limerainne/PaperProKitchen
 echo 그리고 perillamint 님의 RP4JailbreakKit v1 을 기반으로 만들어졌습니다.
 echo 		https://github.com/perillamint/RP4JailbreakKit
+echo.
+echo 폴더가 복잡하거나 "한글명" 폴더가 경로에 있는경우 실행이 안되는경우가 있습니다.
+echo 바탕화면에 압축을 풀고 실행하시길 바랍니다.
 echo =========================================
 echo.
 pause
