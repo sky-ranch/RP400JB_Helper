@@ -19,10 +19,10 @@ echo 1.08 이 후 펌웨어의 경우 아래링크를 방문하여
 echo 변동사항 여부를 확인하시길 바랍니다.
 echo.
 echo *게시글링크
-echo https://github.com/limerainne/PaperProKitchen
+echo https://cafe.naver.com/ebook/673447
 echo.
 echo *다운로드링크
-echo https://github.com/limerainne/PaperProKitchen
+echo https://github.com/sky-ranch/RP400JB_Helper
 echo.
 echo *도움을 주신분
 echo 본 배치파일은 Limerainee 님의 Ridipaer Pro Kitchien r13.2 
@@ -236,14 +236,14 @@ echo ^- 내 컴퓨터에서 드라이버 찾아보기
 echo ^- 컴퓨터의 사용가능한 드라이버 목록에서 직접 선택
 echo ^- ADB Interface
 echo ^- SAMSUNG Android ADB Interface
-echo 	**사용하는 OS 에 따라 Android ADB 
-echo 	혹은 Google Anroid ADB interface로 뜰 수 있습니다
-echo	[Android ADB interface]가 들어간 드라이버를 골라주세요
+echo 		**사용하는 OS 에 따라 Android ADB 
+echo 		혹은 Google Anroid ADB interface로 뜰 수 있습니다
+echo		[Android ADB interface]가 들어간 드라이버를 골라주세요
 echo 드라이버 업데이트 경고
 echo ^- "예"를 눌러 진행
 echo.
 echo 다시 장치관리자를 열어
-echo ADB Interface - [SAMSUNG or Google] Android ADB Interface 로 인식되었는지 확인합니다.
+echo ADB Interface (Android Interface) - [SAMSUNG or Google 등] Android ADB Interface 로 인식되었는지 확인합니다.
 echo.
 echo 인식이 되었으면 엔터키를 눌러 다음단계로 이동합니다.
 echo.
@@ -254,7 +254,7 @@ echo.
 :5_boot_with_image
 echo ==== 5. 루트 이미지로 부팅 ====
 echo.
-echo 리디페이퍼4가 SAMSUNG Android ADB Interface 로 인식되었나요? 그렇지 않다면,
+echo 리디페이퍼4가 [SAMSUNG or Google 등] Android ADB Interface 로 인식되었나요? 그렇지 않다면,
 echo ^- USB 케이블을 바꿔보거나,
 echo ^- PC의 다른 USB 포트를 사용해 보세요.
 
@@ -275,7 +275,7 @@ IF /I "!AREYOUSURE!" NEQ "Y" GOTO 5_1_fastboot_devices
 
 :5_2_choose_image
 echo -- 사용가능한 Boot 이미지 --
-echo 1. 루트 (Magisk) Boot 이미지
+echo 1. 루트(magisk) Boot 이미지
 echo 2. 순정 Boot 이미지 
 echo [미지원] 3. 루트 후 언루트 
 echo.
