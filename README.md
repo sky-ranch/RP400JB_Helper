@@ -34,7 +34,7 @@ V1.2 - 탈옥 6단계 중 원하는 단계로 이동하는 과정 추가
 [release-badge]:https://img.shields.io/github/release/sky-ranch/RP400JB_Helper
 [download-badge]:https://img.shields.io/github/download/sky-ranch/RP400JB_Helper/total
 [release-target]:https://github.com/sky-ranch/RP400JB_Helper/releases/tag/v1.2
-[release-target-badge]:https://img.shields.io/github/downloads/sky-ranch/RP400JB_Helper/v1.2/RP400JB_Helper.v1.2zip?style=for-the-badge
+[release-target-badge]:https://img.shields.io/github.com/sky-ranch/RP400JB_Helper/releases/download/v1.2/RP400JB_Helper.v1.2.zip?style=for-the-badge
 
 [paper_pro-brochure]:https://paper.ridibooks.com/pro/
 [detailed_guide]:https://cafe.naver.com/ebook/673447
