@@ -31,8 +31,8 @@ V1.1 - USB 케이블 제거방지 문구 및 ADB 부분 수정
 [release]:https://github.com/sky-ranch/RP400JB_Helper/releases
 [release-badge]:https://img.shields.io/github/release/sky-ranch/RP400JB_Helper
 [download-badge]:https://img.shields.io/github/download/sky-ranch/RP400JB_Helper/total
-[release-target]:https://github.com/sky-ranch/RP400JB_Helper/releases/tag/v1
-[release-target-badge]:https://img.shields.io/github/downloads/sky-ranch/RP400JB_Helper/v1/RP400JB_Helper.v1.zip?style=for-the-badge
+[release-target]:https://github.com/sky-ranch/RP400JB_Helper/releases/tag/v1.1
+[release-target-badge]:https://img.shields.io/github/downloads/sky-ranch/RP400JB_Helper/v1.1/RP400JB_Helper.v1.1zip?style=for-the-badge
 
 [paper_pro-brochure]:https://paper.ridibooks.com/pro/
 [detailed_guide]:https://cafe.naver.com/ebook/673376
