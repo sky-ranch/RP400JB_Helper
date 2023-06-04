@@ -1,4 +1,4 @@
-# RP400 JailBreak Helper (v1) [![Release][release-badge]][release-target] [![DownloadCount][download-badge]][release-target]
+# RP400 JailBreak Helper (v1.1) [![Release][release-badge]][release-target] [![DownloadCount][download-badge]][release-target]
 
 ## **다운로드** → [![Release][release-target-badge]][release-target]
 
@@ -10,6 +10,12 @@
       해당 페이지에서 code-download.zip 을 하여
       \RP400JB_Helper\RP4JailbreakKit 폴더 안에 사진과 같이 압축을 풀어주시길 바랍니다.
  이후 step_by_step.cmd 를 실행해줍니다
+
+- 상세 설명은 https://cafe.naver.com/ebook/673447 에서 보실 수 있습니다.
+-----
+### Version
+V1.0 - 최초 공개버전
+V1.1 - USB 케이블 제거방지 문구 및 ADB 부분 수정
 
 -----
 ### 주의사항
