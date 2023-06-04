@@ -1,4 +1,4 @@
-# RP400 JailBreak Helper (v1.1) [![Release][release-badge]][release-target] ![GitHub all releases](https://img.shields.io/github/downloads/sky-ranch/RP400JB_Helper/total)
+# RP400 JailBreak Helper (v1.2) [![Release][release-badge]][release-target] ![GitHub all releases](https://img.shields.io/github/downloads/sky-ranch/RP400JB_Helper/total)
 
 ## **다운로드** → [![Release][release-target-badge]][release-target]
 
@@ -18,6 +18,8 @@ V1.0 - 최초 공개버전
 
 V1.1 - USB 케이블 제거방지 문구 및 ADB 부분 수정
 
+V1.2 - 탈옥 6단계 중 원하는 단계로 이동하는 과정 추가
+
 -----
 ### 주의사항
 > * 본 도구로 인해 발생할 수 있는 어떤 문제도 책임지지 않습니다!
@@ -31,8 +33,8 @@ V1.1 - USB 케이블 제거방지 문구 및 ADB 부분 수정
 [release]:https://github.com/sky-ranch/RP400JB_Helper/releases
 [release-badge]:https://img.shields.io/github/release/sky-ranch/RP400JB_Helper
 [download-badge]:https://img.shields.io/github/download/sky-ranch/RP400JB_Helper/total
-[release-target]:https://github.com/sky-ranch/RP400JB_Helper/releases/tag/v1.1
-[release-target-badge]:https://img.shields.io/github/downloads/sky-ranch/RP400JB_Helper/v1.1/RP400JB_Helper.v1.1zip?style=for-the-badge
+[release-target]:https://github.com/sky-ranch/RP400JB_Helper/releases/tag/v1.2
+[release-target-badge]:https://img.shields.io/github/downloads/sky-ranch/RP400JB_Helper/v1.2/RP400JB_Helper.v1.2zip?style=for-the-badge
 
 [paper_pro-brochure]:https://paper.ridibooks.com/pro/
-[detailed_guide]:https://cafe.naver.com/ebook/673376
+[detailed_guide]:https://cafe.naver.com/ebook/673447
