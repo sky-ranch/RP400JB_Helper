@@ -1,5 +1,5 @@
 @echo off
-mode con cols=80 lines=30
+mode con cols=80 lines=60
 chcp 949 1> NUL 2> NUL
 set "PATH=%~dp0\bin;%PATH%"
 setlocal enabledelayedexpansion enableextensions
@@ -12,10 +12,10 @@ echo.
 echo =========================================
 echo RidiPaper4 JailBreak Helper v1.230604
 echo =========================================
-echo RP400JB_Helper sky_ranch @ 230604 v1 
+echo RP400JB_Helper sky_ranch @ 230604 v1.2
 echo.
 echo 본 배치파일은 V1.08 펌웨어 기준으로 제작되었습니다.
-echo 1.08 이 후 펌웨어의 경우 아래링크를 방문하여 
+echo 1.08 이후 펌웨어의 경우 아래링크를 방문하여 
 echo 변동사항 여부를 확인하시길 바랍니다.
 echo.
 echo *게시글링크
@@ -94,12 +94,41 @@ echo 등에 책임이 없음에 동의합니다.
 set AREYOUSURE=N
 SET /P AREYOUSURE=동의합니까? [Y/[N]]: 
 echo.
-IF /I "!AREYOUSURE!" EQU "Y" GOTO 0_Reset_Agree
+IF /I "!AREYOUSURE!" EQU "Y" GOTO 0_stage_shortcut
 echo.
 echo.
 echo 동의하지 않으셨습니다. 창을 종료합니다.
 pause
 exit
+
+:0_stage_shortcut
+echo.
+echo 직전단계 바로가기 기능을 시작합니다
+echo.
+echo 첫 시작이신분들은 0 혹은 엔터 키를 누르면 처음으로 이동합니다. 
+echo.
+echo ============= 바로가기 목록 ============= 
+echo		0. 처음 시작 = 리디페이퍼 초기화
+echo		1. Google ADB 드라이버 설치
+echo		2. 장치 관리자 열어 두기
+echo		3. 기기 전원 끄기
+echo		4. Fastboot 모드로 기기 시작
+echo		5. 루트 이미지로 부팅
+echo		   - 순정이미지 복구도 5에서 합니다.
+echo		6. ADB 작업 (IP 입력)
+echo.
+echo	아무것도 입력하지 않으면 처음부터 시작합니다
+echo.
+SET /P SHORTCUT=원하는 바로가기의 숫자를 입력하세요 [0-6]: 
+IF "%SHORTCUT%"=="0" GOTO 0_Reset_Agree
+IF "%SHORTCUT%"=="1" GOTO 1_install_driver
+IF "%SHORTCUT%"=="2" GOTO 2_start_devmgmt
+IF "%SHORTCUT%"=="3" GOTO 3_shutdown_device
+IF "%SHORTCUT%"=="4" GOTO 4_reboot_into_fastboot
+IF "%SHORTCUT%"=="5" GOTO 5_boot_with_image
+IF "%SHORTCUT%"=="6" GOTO 6_wait_for_the_job
+IF "%SHORTCUT%"=="7" GOTO 7_adb_shell_root
+
 
 :0_Reset_Agree
 echo.
@@ -110,6 +139,7 @@ echo 필요한 자료는 미리 백업해놓으시길 바랍니다.
 echo.
 echo ★★ 초기화후 Wi-Fi 연결 만 진행합니다. ★★
 echo ★★ 작업하는 PC와 리페4는 같은 Wifi (동일네트워크)에 있어야합니다.★★
+echo ★★ 아이폰 테더링 환경에서 안됩니다.갤럭시 테더링(핫스팟) 사용하세요.★★
 echo.
 echo - WiFi 설정이후 ADB 가 닫히므로 초기화후 Wi-Fi 연결 실행 까지만 하고 
 echo - 리디페이퍼를 종료합니다.
@@ -220,7 +250,8 @@ echo ==== 4. Fastboot 모드로 기기 시작 ====
 echo.
 echo 리디페이퍼4의 전원이 완전히 꺼진 것을 확인합니다.
 echo ^- 전면 물리 버튼 중 Up 버튼과 기기 상단 전원 버튼을 동시에 7초간 누른후 손을 뗍니다.
-echo ^- 손을 뗀 즉시 USB 케이블로 리디페이퍼 4와 PC를 연결합니다.
+echo ^- 손을 뗀 즉시 USB 케이블로 리디페이퍼 4와 PC를 연결합니다. 
+echo ^- 그리고 이 USB 케이블은 작업 끝까지 빼지 않습니다.
 echo.
 echo 정상적으로 Fastboot 모드로 연결되었다면
 echo 화면에는 RIDI PAPER 4 로고 혹은 전원Off 화면 만 보일 것입니다.
@@ -234,19 +265,17 @@ echo ^- 우클릭
 echo ^- 드라이버 업데이트
 echo ^- 내 컴퓨터에서 드라이버 찾아보기
 echo ^- 컴퓨터의 사용가능한 드라이버 목록에서 직접 선택
-echo ^- ADB Interface
-echo ^- SAMSUNG Android ADB Interface
-echo 		**사용하는 OS 에 따라 Android ADB 
-echo 		혹은 Google Anroid ADB interface로 뜰 수 있습니다
-echo		[Android ADB interface]가 들어간 드라이버를 골라주세요
+echo ^- ADB Interface - SAMSUNG Android ADB Interface
+echo 	**사용하는 OS 에 따라 Android ADB 혹은 Google Anroid ADB interface로 뜰 수 있습니다
+echo 	**[Android ADB interface]가 들어간 드라이버를 골라주세요
 echo 드라이버 업데이트 경고
+
 echo ^- "예"를 눌러 진행
 echo.
 echo 다시 장치관리자를 열어
 echo ADB Interface (Android Interface) - [SAMSUNG or Google 등] Android ADB Interface 로 인식되었는지 확인합니다.
 echo.
 echo 인식이 되었으면 엔터키를 눌러 다음단계로 이동합니다.
-echo.
 pause
 
 echo.
@@ -338,10 +367,10 @@ IF /I "!AREYOUSURE!" EQU "Y" GOTO 5_3_fastboot_boot_with_chosen_image
 echo.
 echo ==== 6. ADB 작업 ====
 echo.
-echo 기기 부팅이 완료되었으면 USB 케이블을 제거해줍니다.
+echo USB 케이블 제거하지마세요! PC에 연결된채로 진행합니다.
 echo.
 echo 지금까지 앞의 작업들을 잘 따라하셨다면
-echo ^- 현재 리디페이퍼 4는 초기화 후 상태로 부팅되어있을겁니다.
+echo ^- 현재 리디페이퍼 4는 초기화 후 상태로 부팅되어있을겁니다. (자동 재부팅 2분정도 소요)
 echo ^- 다음으로 를 눌러 Wifi연결창 (Wi-Fi를 연결해주세요) 로 넘어갑니다,
 echo ^- 내 Wifi가 이미 연결되어 있을텐데 나의 Wifi 신호세기 옆 i (ⓛ) 를 누릅니다
 echo ^- 마지막 줄의 IP 주소 (192.168.X.XX / 172.X.X.X / 10.X.X.X 와 같은 숫자)를 확인합니다.
@@ -386,6 +415,8 @@ echo 장치설정을 시작 하기 앞서 주의사항입니다.
 echo ^- 기기화면을 잘 보시고 장치에서 슈퍼유저 권한을 허용해 주세요
 echo ^- 슈퍼유저 요청 창이 뜨면 ""우측""의 일괄허용을 누르셔야합니다.
 echo ^- 슈퍼유저 권한 허용을 못 누르셨다면 기기초기화 후 처음부터 진행하시길 바랍니다.
+echo ^- 슈퍼유저 권한 창이 뜨지 않은경우도. 초기화후 처음부터 진행하시길 바랍니다
+echo		Cf.) 아이폰-테더링, KT공유기(일부)에서 슈퍼유저 권한 창이 뜨지 않는 것으로 보고됨
 echo.
 echo Y를 입력후 엔터 키를 누르면 장치설정이 시작됩니다.
 echo 장치설정이 시자되면 리디페이퍼 4 화면을 잘 봐주시고 슈퍼유저 권한을 허용해주세요
@@ -402,7 +433,12 @@ echo.
 
 :finish
 echo.
-echo 모든작업이 종료되었습니다. 
+echo Adb no device found 등의 문구가 보인다면 작업과정에 에러가 있었던 것으로 생각되어집니다.
+echo 위와같은경우 배치파일을 재실행하여 에러가 있던 단계부터 재실행 하시길 바랍니다.
+echo.
+echo. "완료되었습니다. 기기를 껐다 켜 주세요." 문구가 보인다면 작업이 정상적으로 종료된 것입니다.
+echo.
+echo 이제 모든작업이 종료되었습니다. 
 echo ^- 기기 재부팅 후 RIDI 로그인을 진행하시면 됩니다.
 echo ^- 홈버튼을 누르면 e-ink 런처로 이동합니다.
 echo ^- 파일매니저 를 통하여 apk 설치가 가능합니다.
