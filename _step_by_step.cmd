@@ -19,7 +19,7 @@ echo 1.08 이 후 펌웨어의 경우 아래링크를 방문하여
 echo 변동사항 여부를 확인하시길 바랍니다.
 echo.
 echo *게시글링크
-echo https://cafe.naver.com/ebook/673376
+echo https://cafe.naver.com/ebook/673447
 echo.
 echo *다운로드링크
 echo https://github.com/sky-ranch/RP400JB_Helper
