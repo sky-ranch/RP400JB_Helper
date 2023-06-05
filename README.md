@@ -36,7 +36,7 @@ V1.3 - ADB 파일전송 실패하는 경우 해결방안 추가, ADB 환경 (바
 [release-badge]:https://img.shields.io/github/release/sky-ranch/RP400JB_Helper
 [download-badge]:https://img.shields.io/github/download/sky-ranch/RP400JB_Helper/total
 [release-target]:https://github.com/sky-ranch/RP400JB_Helper/releases/tag/v1.3
-[release-target-badge]:https://img.shields.io/github/downloads/sky-ranch/RP400JB_Helper/v1.3/RP400JB_Helper.v1.4.zip?style=for-the-badge
+[release-target-badge]:https://img.shields.io/github/downloads/sky-ranch/RP400JB_Helper/v1.3/RP400JB_Helper.v1.3.zip?style=for-the-badge
 
 [paper_pro-brochure]:https://paper.ridibooks.com/pro/
 [detailed_guide]:https://cafe.naver.com/ebook/673447
