@@ -6,13 +6,13 @@ setlocal enabledelayedexpansion enableextensions
 
 cd %~dp0
 pushd %~dp0
-title RidiPaper4 JailBreak Heplper # 리디페이퍼4 탈옥 도우미 v1
+title RidiPaper4 JailBreak Heplper # 리디페이퍼4 탈옥 도우미 v1.3
 
 echo.
 echo =========================================
-echo RidiPaper4 JailBreak Helper v1.230604
+echo RidiPaper4 JailBreak Helper v1.3 230605
 echo =========================================
-echo RP400JB_Helper sky_ranch @ 230604 v1.2
+echo RP400JB_Helper sky_ranch @ 230605 v1.3
 echo.
 echo 본 배치파일은 V1.08 펌웨어 기준으로 제작되었습니다.
 echo 1.08 이후 펌웨어의 경우 아래링크를 방문하여 
@@ -119,6 +119,11 @@ echo		4. Fastboot 모드로 기기 시작
 echo		5. 루트 이미지로 부팅
 echo		   - 순정이미지 복구도 5에서 합니다.
 echo		6. ADB 작업 (IP 입력)
+echo	7. ADB Shell 스크립트 장치설정 (슈퍼유저권한)
+echo.
+echo =============== 추가 환경 =============== 
+echo.
+echo		8. ADB 환경 (초.중급자용)
 echo.
 echo	아무것도 입력하지 않으면 처음부터 시작합니다
 echo.
@@ -131,7 +136,7 @@ IF "%SHORTCUT%"=="4" GOTO 4_reboot_into_fastboot
 IF "%SHORTCUT%"=="5" GOTO 5_boot_with_image
 IF "%SHORTCUT%"=="6" GOTO 6_wait_for_the_job
 IF "%SHORTCUT%"=="7" GOTO 7_adb_shell_root
-
+IF "%SHORTCUT%"=="8" GOTO 8_adb_env
 
 :0_Reset_Agree
 echo.
@@ -371,6 +376,9 @@ echo.
 echo ==== 6. ADB 작업 ====
 echo.
 echo USB 케이블 제거하지마세요! PC에 연결된채로 진행합니다.
+echo	단 재부팅 직후 USB 데이터 전송모드창이 뜬다면 USB 케이블을 제거하고 재부팅합니다.
+echo.
+echo  QnA 및 오류는 https://cafe.naver.com/ebook/673447 (링크를 Ctrl누르고 클릭)를 참고하시길 바랍니다.
 echo.
 echo 지금까지 앞의 작업들을 잘 따라하셨다면
 echo ^- 현재 리디페이퍼 4는 초기화 후 상태로 부팅되어있을겁니다. (자동 재부팅 2분정도 소요)
@@ -379,7 +387,7 @@ echo ^- 내 Wifi가 이미 연결되어 있을텐데 나의 Wifi 신호세기 옆 i (ⓛ) 를 누릅니�
 echo ^- 마지막 줄의 IP 주소 (192.168.X.XX / 172.X.X.X / 10.X.X.X 와 같은 숫자)를 확인합니다.
 echo.
 echo 이제 리디페이퍼4의 IP 주소를 입력합니다.
-echo IP 주소에느 192.168.0.4 처럼 숫자와 . 만 입력해주시길 바랍니다
+echo IP 주소에는 192.168.0.4 처럼 숫자와 . 만 입력해주시길 바랍니다
 echo.
 echo 본인 리디페이퍼4의 IP 주소를 입력해주세요.
 SET /P RP400IP=IP 주소  [예시 : 192.168.0.5]를 입력해주세요. : 
@@ -404,11 +412,13 @@ echo Success 메시지가 잘 떴다면 엔터키를 눌러 다음으로 넘어갑니다.
 echo.
 echo Success 메시지가 없거나 
 echo 대상 컴퓨터에서 연결을 거부하였으므로 연결하지 못했습니다. 혹은
-echo no device found 등의 에러가 뜨는경우 IP주소를 잘못입력했거나
-echo fastboot가 정상적으로 이루어지지 않은것으로 보입니다.
+echo no device found 등의 에러가 뜨는경우 IP주소를 잘못입력했거나 ADB가 막힌상황으로 보입니다.
+echo. 
+echo  이 창을 그대로 두고 즉시 리디페이퍼4를 재부팅합니다.
+echo  리디페이퍼4 Wifi 연결을 확인 후 Y입력후 엔터 키를  눌러 IP주소 입력단계를 반복합니다.
 echo.
-echo 다음단계로 넘어가려면 엔터키를
 echo IP주소를 다시 입력하려면 Y를 입력하고 엔터 키를 누르세요.
+echo 다음단계로 넘어가려면 N 혹은 아무것도 입력하지 않고 엔터 키를 누르세요
 set AREYOUSURE=N
 SET /P AREYOUSURE=IP 주소입력창으로 돌아갈까요? [Y/[N]]: 
 echo.
@@ -452,6 +462,16 @@ echo.
 echo 이제 창을 닫으셔도 좋습니다.
 echo. 
 echo RP400JB_Helper 230604_skyranch
+echo.
+pause
+exit
+
+:8_adb_env
+cd %dp0\bin
+echo.
+echo 초 중급자를 위한 ADB 환경입니다
+echo ^-  adb devices, adb connect 192.168.0.4:5555 와 같은 명령어를 바로 입력할 수 있습니다.
+echo ^-  adb, fastboot 의 환경설정이 되어있으므로 바로 명령어를 입력하시면 됩니다.
 echo.
 
 cmd /K
