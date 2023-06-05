@@ -127,7 +127,7 @@ echo		8. ADB 환경 (초.중급자용)
 echo.
 echo	아무것도 입력하지 않으면 처음부터 시작합니다
 echo.
-SET /P SHORTCUT=원하는 바로가기의 숫자를 입력하세요 [0-6]: 
+SET /P SHORTCUT=원하는 바로가기의 숫자를 입력하세요 [0-8]: 
 IF "%SHORTCUT%"=="0" GOTO 0_Reset_Agree
 IF "%SHORTCUT%"=="1" GOTO 1_install_driver
 IF "%SHORTCUT%"=="2" GOTO 2_start_devmgmt
@@ -277,7 +277,6 @@ echo ^- ADB Interface - SAMSUNG Android ADB Interface
 echo 	**사용하는 OS 에 따라 Android ADB 혹은 Google Anroid ADB interface로 뜰 수 있습니다
 echo 	**[Android ADB interface]가 들어간 드라이버를 골라주세요
 echo 드라이버 업데이트 경고
-
 echo ^- "예"를 눌러 진행
 echo.
 echo 다시 장치관리자를 열어
@@ -350,7 +349,8 @@ IF /I "!AREYOUSURE!" NEQ "Y" GOTO 5_2_choose_image
 :5_3_fastboot_boot_with_chosen_image
 
 echo.
-echo 기기에 커스텀 magisk 이미지를 플래싱 합니다.
+echo 기기에 Boot 이미지를 플래싱 합니다.
+echo	- 순정 복구를 선택한경우 Fastboot 플래싱 후 부팅 되면 다시 초기화 바랍니다.
 echo.
 echo Sending, Writing 후 재부팅이 진행됩니다. 혹시 3분이 지나도 재부팅이 되지않는경우
 echo 기기와 usb 케이블을 분리하고 전원 버튼을 약 10초간 눌러 강제 재부팅 후
@@ -393,6 +393,8 @@ echo 본인 리디페이퍼4의 IP 주소를 입력해주세요.
 SET /P RP400IP=IP 주소  [예시 : 192.168.0.5]를 입력해주세요. : 
 echo.
 echo 리디페이퍼 4 IP인 %RP400IP% 로 연결을 시작합니다.
+echo.
+echo 만일 잘못 입력하였다면 IP주소입력단계로 다시 돌아와서 입력하면 됩니다.
 echo.
 
 set ADB_ADD_PATH=RP4JailbreakKit
@@ -449,7 +451,7 @@ echo.
 echo Adb no device found 등의 문구가 보인다면 작업과정에 에러가 있었던 것으로 생각되어집니다.
 echo 위와같은경우 배치파일을 재실행하여 에러가 있던 단계부터 재실행 하시길 바랍니다.
 echo.
-echo. "완료되었습니다. 기기를 껐다 켜 주세요." 문구가 보인다면 작업이 정상적으로 종료된 것입니다.
+echo. [완료되었습니다. 기기를 껐다 켜 주세요.] 문구가 보인다면 작업이 정상적으로 종료된 것입니다.
 echo.
 echo 이제 모든작업이 종료되었습니다. 
 echo ^- 기기 재부팅 후 RIDI 로그인을 진행하시면 됩니다.
