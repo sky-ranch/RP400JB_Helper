@@ -118,6 +118,7 @@ echo		3. 기기 전원 끄기
 echo		4. Fastboot 모드로 기기 시작
 echo		5. 루트 이미지로 부팅
 echo		   - 순정이미지 복구도 5에서 합니다.
+echo		   - Fastboot 진입후 실행하세요
 echo		6. ADB 작업 (IP 입력)
 echo	7. ADB Shell 스크립트 장치설정 (슈퍼유저권한)
 echo.
@@ -127,7 +128,7 @@ echo		8. ADB 환경 (초.중급자용)
 echo.
 echo	아무것도 입력하지 않으면 처음부터 시작합니다
 echo.
-SET /P SHORTCUT=원하는 바로가기의 숫자를 입력하세요 [0-8]: 
+SET /P SHORTCUT=원하는 바로가기의 숫자를 입력하세요 [0-6]: 
 IF "%SHORTCUT%"=="0" GOTO 0_Reset_Agree
 IF "%SHORTCUT%"=="1" GOTO 1_install_driver
 IF "%SHORTCUT%"=="2" GOTO 2_start_devmgmt
@@ -277,6 +278,7 @@ echo ^- ADB Interface - SAMSUNG Android ADB Interface
 echo 	**사용하는 OS 에 따라 Android ADB 혹은 Google Anroid ADB interface로 뜰 수 있습니다
 echo 	**[Android ADB interface]가 들어간 드라이버를 골라주세요
 echo 드라이버 업데이트 경고
+
 echo ^- "예"를 눌러 진행
 echo.
 echo 다시 장치관리자를 열어
@@ -349,8 +351,7 @@ IF /I "!AREYOUSURE!" NEQ "Y" GOTO 5_2_choose_image
 :5_3_fastboot_boot_with_chosen_image
 
 echo.
-echo 기기에 Boot 이미지를 플래싱 합니다.
-echo	- 순정 복구를 선택한경우 Fastboot 플래싱 후 부팅 되면 다시 초기화 바랍니다.
+echo 기기에 커스텀 magisk 이미지를 플래싱 합니다.
 echo.
 echo Sending, Writing 후 재부팅이 진행됩니다. 혹시 3분이 지나도 재부팅이 되지않는경우
 echo 기기와 usb 케이블을 분리하고 전원 버튼을 약 10초간 눌러 강제 재부팅 후
@@ -376,9 +377,6 @@ echo.
 echo ==== 6. ADB 작업 ====
 echo.
 echo USB 케이블 제거하지마세요! PC에 연결된채로 진행합니다.
-echo	단 재부팅 직후 USB 데이터 전송모드창이 뜬다면 USB 케이블을 제거하고 재부팅합니다.
-echo.
-echo  QnA 및 오류는 https://cafe.naver.com/ebook/673447 (링크를 Ctrl누르고 클릭)를 참고하시길 바랍니다.
 echo.
 echo 지금까지 앞의 작업들을 잘 따라하셨다면
 echo ^- 현재 리디페이퍼 4는 초기화 후 상태로 부팅되어있을겁니다. (자동 재부팅 2분정도 소요)
@@ -393,8 +391,6 @@ echo 본인 리디페이퍼4의 IP 주소를 입력해주세요.
 SET /P RP400IP=IP 주소  [예시 : 192.168.0.5]를 입력해주세요. : 
 echo.
 echo 리디페이퍼 4 IP인 %RP400IP% 로 연결을 시작합니다.
-echo.
-echo 만일 잘못 입력하였다면 IP주소입력단계로 다시 돌아와서 입력하면 됩니다.
 echo.
 
 set ADB_ADD_PATH=RP4JailbreakKit
@@ -414,13 +410,11 @@ echo Success 메시지가 잘 떴다면 엔터키를 눌러 다음으로 넘어갑니다.
 echo.
 echo Success 메시지가 없거나 
 echo 대상 컴퓨터에서 연결을 거부하였으므로 연결하지 못했습니다. 혹은
-echo no device found 등의 에러가 뜨는경우 IP주소를 잘못입력했거나 ADB가 막힌상황으로 보입니다.
-echo. 
-echo  이 창을 그대로 두고 즉시 리디페이퍼4를 재부팅합니다.
-echo  리디페이퍼4 Wifi 연결을 확인 후 Y입력후 엔터 키를  눌러 IP주소 입력단계를 반복합니다.
+echo no device found 등의 에러가 뜨는경우 IP주소를 잘못입력했거나
+echo fastboot가 정상적으로 이루어지지 않은것으로 보입니다.
 echo.
+echo 다음단계로 넘어가려면 엔터키를
 echo IP주소를 다시 입력하려면 Y를 입력하고 엔터 키를 누르세요.
-echo 다음단계로 넘어가려면 N 혹은 아무것도 입력하지 않고 엔터 키를 누르세요
 set AREYOUSURE=N
 SET /P AREYOUSURE=IP 주소입력창으로 돌아갈까요? [Y/[N]]: 
 echo.
@@ -451,7 +445,7 @@ echo.
 echo Adb no device found 등의 문구가 보인다면 작업과정에 에러가 있었던 것으로 생각되어집니다.
 echo 위와같은경우 배치파일을 재실행하여 에러가 있던 단계부터 재실행 하시길 바랍니다.
 echo.
-echo. [완료되었습니다. 기기를 껐다 켜 주세요.] 문구가 보인다면 작업이 정상적으로 종료된 것입니다.
+echo. "완료되었습니다. 기기를 껐다 켜 주세요." 문구가 보인다면 작업이 정상적으로 종료된 것입니다.
 echo.
 echo 이제 모든작업이 종료되었습니다. 
 echo ^- 기기 재부팅 후 RIDI 로그인을 진행하시면 됩니다.
@@ -469,7 +463,6 @@ pause
 exit
 
 :8_adb_env
-cd %dp0\bin
 echo.
 echo 초 중급자를 위한 ADB 환경입니다
 echo ^-  adb devices, adb connect 192.168.0.4:5555 와 같은 명령어를 바로 입력할 수 있습니다.
