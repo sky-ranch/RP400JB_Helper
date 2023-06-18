@@ -1,4 +1,4 @@
-# RP400 JailBreak Helper (v1.3) [![Release][release-badge]][release-target] ![GitHub all releases](https://img.shields.io/github/downloads/sky-ranch/RP400JB_Helper/total)
+# RP400 JailBreak Helper (v1.35) [![Release][release-badge]][release-target] ![GitHub all releases](https://img.shields.io/github/downloads/sky-ranch/RP400JB_Helper/total)
 
 ## **다운로드** → [![Release][release-target-badge]][release-target]
 
@@ -37,8 +37,8 @@ V1.35 - Fastboot 및 자주 뜨는 오류에 대한 문구 추가
 [release]:https://github.com/sky-ranch/RP400JB_Helper/releases
 [release-badge]:https://img.shields.io/github/release/sky-ranch/RP400JB_Helper
 [download-badge]:https://img.shields.io/github/download/sky-ranch/RP400JB_Helper/total
-[release-target]:https://github.com/sky-ranch/RP400JB_Helper/releases/tag/v1.3
-[release-target-badge]:https://img.shields.io/github/downloads/sky-ranch/RP400JB_Helper/v1.3/total?style=for-the-badge&logo=appveyor
+[release-target]:https://github.com/sky-ranch/RP400JB_Helper/releases/tag/v1.35
+[release-target-badge]:https://img.shields.io/github/downloads/sky-ranch/RP400JB_Helper/v1.35/total?style=for-the-badge&logo=appveyor
 
 [paper_pro-brochure]:https://paper.ridibooks.com/pro/
 [detailed_guide]:https://cafe.naver.com/ebook/673447
