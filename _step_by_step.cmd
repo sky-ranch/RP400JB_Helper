@@ -6,13 +6,13 @@ setlocal enabledelayedexpansion enableextensions
 
 cd %~dp0
 pushd %~dp0
-title RidiPaper4 JailBreak Heplper # 리디페이퍼4 탈옥 도우미 v1.3
+title RidiPaper4 JailBreak Heplper # 리디페이퍼4 탈옥 도우미 v1.35
 
 echo.
 echo =========================================
-echo RidiPaper4 JailBreak Helper v1.3 230605
+echo RidiPaper4 JailBreak Helper v1.35 230618
 echo =========================================
-echo RP400JB_Helper sky_ranch @ 230605 v1.3
+echo RP400JB_Helper sky_ranch @ 230618 v1.35
 echo.
 echo 본 배치파일은 V1.08 펌웨어 기준으로 제작되었습니다.
 echo 1.08 이후 펌웨어의 경우 아래링크를 방문하여 
@@ -128,7 +128,7 @@ echo		8. ADB 환경 (초.중급자용)
 echo.
 echo	아무것도 입력하지 않으면 처음부터 시작합니다
 echo.
-SET /P SHORTCUT=원하는 바로가기의 숫자를 입력하세요 [0-6]: 
+SET /P SHORTCUT=원하는 바로가기의 숫자를 입력하세요 [0-8]: 
 IF "%SHORTCUT%"=="0" GOTO 0_Reset_Agree
 IF "%SHORTCUT%"=="1" GOTO 1_install_driver
 IF "%SHORTCUT%"=="2" GOTO 2_start_devmgmt
@@ -206,8 +206,17 @@ if %USE_DPINST% EQU 1 (
 REM NOTE 괄호짝 잘 맞출 것...
 
 echo.
+echo ---------------------------------------------------------
+echo 자동 드라이버 설치실패시 RP400JB_Helper\drivers\GoogleUSBDriver
+echo  폴더안에 android_winusb.inf 를 우클릭하여 "설치" 를 누르면
+echo  드라이버가 설치됩니다
+echo  *윈11에서는 우클릭-더보기를 눌러야 설치가 있습니다.
+echo ---------------------------------------------------------
+echo.
+echo.
 echo 혹시 드라이버 설치를 다시 시도해야 하나요?
 echo 그렇다면 Y를 입력하고 엔터 키를, 다음 단계로 가려면 엔터 키를 누르세요.
+echo.
 
 set AREYOUSURE=N
 SET /P AREYOUSURE=다시 설치할까요? [Y/[N]]: 
@@ -259,7 +268,8 @@ echo ==== 4. Fastboot 모드로 기기 시작 ====
 echo.
 echo 리디페이퍼4의 전원이 완전히 꺼진 것을 확인합니다.
 echo ^- 전면 물리 버튼 중 Up 버튼과 기기 상단 전원 버튼을 동시에 7초간 누른후 손을 뗍니다.
-echo ^- 손을 뗀 즉시 USB 케이블로 리디페이퍼 4와 PC를 연결합니다. 
+echo ^- 7초정도 누르다보면 화이트 LED 깜빡이는 속도가 미묘하게 달라지는데 이때가 fastboot 모드입니다.
+echo ^- LED깜빡이는 속도가 달라지면 손을 떼고, 손을 뗀 즉시 USB 케이블로 리디페이퍼 4와 PC를 연결합니다. 
 echo ^- 그리고 이 USB 케이블은 작업 끝까지 빼지 않습니다.
 echo.
 echo 정상적으로 Fastboot 모드로 연결되었다면
@@ -277,9 +287,7 @@ echo ^- 컴퓨터의 사용가능한 드라이버 목록에서 직접 선택
 echo ^- ADB Interface - SAMSUNG Android ADB Interface
 echo 	**사용하는 OS 에 따라 Android ADB 혹은 Google Anroid ADB interface로 뜰 수 있습니다
 echo 	**[Android ADB interface]가 들어간 드라이버를 골라주세요
-echo 드라이버 업데이트 경고
-
-echo ^- "예"를 눌러 진행
+echo 드라이버 업데이트 경고 :  "예"를 눌러 진행
 echo.
 echo 다시 장치관리자를 열어
 echo ADB Interface (Android Interface) - [SAMSUNG or Google 등] Android ADB Interface 로 인식되었는지 확인합니다.
@@ -377,6 +385,8 @@ echo.
 echo ==== 6. ADB 작업 ====
 echo.
 echo USB 케이블 제거하지마세요! PC에 연결된채로 진행합니다.
+echo   단 데이터 전송모드가 뜨는경우 케이블을 제거하고
+echo   케이블 제거한채로 즉시 재부팅합니다.
 echo.
 echo 지금까지 앞의 작업들을 잘 따라하셨다면
 echo ^- 현재 리디페이퍼 4는 초기화 후 상태로 부팅되어있을겁니다. (자동 재부팅 2분정도 소요)
@@ -437,7 +447,14 @@ echo.
 
 :7_adb_shell_root
 adb shell su -c "'sh /sdcard/setup.sh'"
+echo.
 echo 탈옥이 완료되었습니다. 좋은 하루 되세요. :)
+echo.
+echo 단 no devices / adb error 등의 에러 발생시 ADB 연결이 제대로 이루어지지 않은것이며
+echo.
+echo Permission Denied 에러 발생시 슈퍼유저권한을 허용하지 못한것 입니다.
+echo - permission denied 에러시 바로가기 7번 부터 다시 실행하세요
+echo - 그래도 안된다면 리페4 재부팅후 6번 부터 다시 실행하세요
 echo.
 
 :finish
@@ -455,6 +472,12 @@ echo ^- 범용기로 사용하실 분은 퀵버튼을 뒤로가기로 할당하여 쓰는걸 추천드립니다.
 echo ^- 퀵버튼 설정(퀵버튼 2초 누르세요)은 리디페이퍼4 홈에서만 가능합니다
 echo ^- 추가 내용이나 버그 제보는 카페 게시글 혹은 Github을 이용해주세요
 echo.
+echo =========================================
+echo 현재 Magis Boot 루트 이미지에는슬립모드 버그가 있습니다.
+echo 해당 버그에 대한 픽스가 본문 및 Perillamint 님 Github에 올라와 있습니다.
+echo 본문( https://cafe.naver.com/ebook/673447 )을 참고하시길 바랍니다.
+echo =========================================
+echo.
 echo 이제 창을 닫으셔도 좋습니다.
 echo. 
 echo RP400JB_Helper 230604_skyranch
@@ -466,6 +489,8 @@ exit
 echo.
 echo 초 중급자를 위한 ADB 환경입니다
 echo ^-  adb devices, adb connect 192.168.0.4:5555 와 같은 명령어를 바로 입력할 수 있습니다.
+echo ^-  adb shell su -c "'sh /sdcard/setup.sh'" 이나 adb install "내파일\내apk링크.apk" 와 같은 명령어를 입력할 수 있습니다.
+echo ^-  RP400JB_Helper 폴더에 A.apk를 넣어놓는다면 adb install A.apk로 설치가능합니다.
 echo ^-  adb, fastboot 의 환경설정이 되어있으므로 바로 명령어를 입력하시면 됩니다.
 echo.
 
