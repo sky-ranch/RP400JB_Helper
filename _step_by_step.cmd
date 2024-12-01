@@ -407,11 +407,11 @@ set ADB_ADD_PATH=RP4JailbreakKit
 
 adb connect %RP400IP%:5555
 adb push %ADB_ADD_PATH%\magisk-snap.tar /sdcard/magisk-snap.tar
-adb push %ADB_ADD_PATH%\rp4-boot-magisk-261.img /sdcard/boot.img
+adb push %ADB_ADD_PATH%\rp4-109-boot-magisk-280.img /sdcard/boot.img
 adb push %ADB_ADD_PATH%\setup.sh /sdcard/setup.sh
 adb uninstall com.topjohnwu.magisk
-adb install %ADB_ADD_PATH%\magisk.apk
-adb install %ADB_ADD_PATH%\net.micode.fileexplorer_1.apk
+adb install %ADB_ADD_PATH%\apk\magisk.apk
+adb install %ADB_ADD_PATH%\apk\net.micode.fileexplorer_1.apk
 adb install %ADB_ADD_PATH%\SimpleFileManagerPro_6.15.3.apk
 
 echo.
