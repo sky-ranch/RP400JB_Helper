@@ -338,7 +338,7 @@ set RECV_IMAGE_PATH=RP4JailbreakKit
 if /I "%RECV_IMAGE%" == "1" (
 set RECV_IMAGE_PATH=%RECV_IMAGE_PATH%/magisk-cust.img
 ) else if /I "%RECV_IMAGE%" == "2" (
-set RECV_IMAGE_PATH=%RECV_IMAGE_PATH%/RP400_org_boot.img
+set RECV_IMAGE_PATH=%RECV_IMAGE_PATH%/rp4-109-stock.img
 ) else if /I "%RECV_IMAGE%" == "3" (
 set RECV_IMAGE_PATH=%RECV_IMAGE_PATH%/no3temp.img
 ) else if /I "%RECV_IMAGE%" == "4" (
