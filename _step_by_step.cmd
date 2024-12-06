@@ -6,16 +6,16 @@ setlocal enabledelayedexpansion enableextensions
 
 cd %~dp0
 pushd %~dp0
-title RidiPaper4 JailBreak Heplper # 리디페이퍼4 탈옥 도우미 v1.35
+title RidiPaper4 JailBreak Heplper # 리디페이퍼4 탈옥 도우미 v1.40
 
 echo.
 echo =========================================
-echo RidiPaper4 JailBreak Helper v1.35 230618
+echo RidiPaper4 JailBreak Helper v1.40 241206
 echo =========================================
-echo RP400JB_Helper sky_ranch @ 230618 v1.35
+echo RP400JB_Helper sky_ranch @ 230618 v1.40
 echo.
-echo 본 배치파일은 V1.08 펌웨어 기준으로 제작되었습니다.
-echo 1.08 이후 펌웨어의 경우 아래링크를 방문하여 
+echo 본 배치파일은 V1.09 펌웨어 기준으로 제작되었습니다.
+echo 1.09 이후 펌웨어의 경우 아래링크를 방문하여 
 echo 변동사항 여부를 확인하시길 바랍니다.
 echo.
 echo *게시글링크
@@ -473,14 +473,14 @@ echo ^- 퀵버튼 설정(퀵버튼 2초 누르세요)은 리디페이퍼4 홈에서만 가능합니다
 echo ^- 추가 내용이나 버그 제보는 카페 게시글 혹은 Github을 이용해주세요
 echo.
 echo =========================================
-echo 현재 Magis Boot 루트 이미지에는슬립모드 버그가 있습니다.
-echo 해당 버그에 대한 픽스가 본문 및 Perillamint 님 Github에 올라와 있습니다.
+echo 1.4.0 헬퍼의 Perilamint님 magisk이미지는 슬립모드 버그가 픽스되어있습니다.
+echo v1.0.8 혹은 24.12.06 이전 루팅자중 슬립모드 버그가 발현시 아래 링크의 
 echo 본문( https://cafe.naver.com/ebook/673447 )을 참고하시길 바랍니다.
 echo =========================================
 echo.
 echo 이제 창을 닫으셔도 좋습니다.
 echo. 
-echo RP400JB_Helper 230604_skyranch
+echo RP400JB_Helper 241206_skyranch
 echo.
 pause
 exit
