@@ -1,4 +1,4 @@
-# RP400 JailBreak Helper (v1.40) [![Release][release-badge]][release-target] ![GitHub all releases](https://img.shields.io/github/downloads/sky-ranch/RP400JB_Helper/total)
+# RP400 JailBreak Helper (v1.4) [![Release][release-badge]][release-target] ![GitHub all releases](https://img.shields.io/github/downloads/sky-ranch/RP400JB_Helper/total)
 
 ## **다운로드** → [![Release][release-target-badge]][release-target]
 
@@ -24,7 +24,7 @@ V1.3 - ADB 파일전송 실패하는 경우 해결방안 추가, ADB 환경 (바
 
 V1.35 - Fastboot 및 자주 뜨는 오류에 대한 문구 추가
 
-V1.40 - 1.0.9 업데이트 대응 (Thanks to Perilamint)
+V1.4 - Ridi 1.0.9 업데이트 대응 (Thanks to Perillamint)
 
 -----
 ### 주의사항
