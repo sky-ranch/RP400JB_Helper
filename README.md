@@ -1,4 +1,4 @@
-# RP400 JailBreak Helper (v1.35) [![Release][release-badge]][release-target] ![GitHub all releases](https://img.shields.io/github/downloads/sky-ranch/RP400JB_Helper/total)
+# RP400 JailBreak Helper (v1.40) [![Release][release-badge]][release-target] ![GitHub all releases](https://img.shields.io/github/downloads/sky-ranch/RP400JB_Helper/total)
 
 ## **다운로드** → [![Release][release-target-badge]][release-target]
 
